@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-void gotoxy(SHORT x, SHORT y)
+void gotoxy(int x, int y)
 {
   static HANDLE h = NULL;  
   if(!h)
@@ -57,8 +57,8 @@ int main()
                 float inverseZ = 1 / (circlex*sin(phi)*sin(A) + circley*cos(A) + K2);
                 float t = circlex*sin(phi)*cos(A) - circley*sin(A);
                 
-				int x = (width/2) + 30*inverseZ*(circlex*cos(phi)*cos(B) - t*sin(B));
-                int y = (height/2) + 15*inverseZ*(circlex*cos(phi)*sin(B) + t*cos(B));
+				int x = (width/2) + (K1/2 + 10)*inverseZ*(circlex*cos(phi)*cos(B) - t*sin(B));
+                int y = (height/2) + (K1/2 - 10)*inverseZ*(circlex*cos(phi)*sin(B) + t*cos(B));
                 
 				int buffer = x + width*y;
                 
