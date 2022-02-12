@@ -3,7 +3,7 @@ import sys
 import cv2
 import PIL.Image
 
-chars = "@#S%?*+;:,."
+chars = "   .:*+o0O"
 newWidth=100
 
 def resize(image):
